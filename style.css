@@ -1,0 +1,55 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+}
+
+.background-container{
+
+    background-image: url("images/guitar.jpeg");
+    background-size:cover ;
+    width: 35vw;
+    height: 100vh;
+    border-right: solid rgba(224, 101, 13, 0.3) 1px;
+
+}
+main{
+    border-left: solid rgba(0, 0, 0, 0.6) 1px;
+    width: 65vw;
+    height: 100vh;
+    background: rgb(142,107,33);
+    background: linear-gradient(0deg, rgba(142,107,33,0.8475750577367206) 0%, rgba(73,55,22,0.9214780600461894) 43%, rgba(19,18,18,1) 100%);
+}
+
+.background-guitar{
+
+}
+
+
+@media only screen and (max-width: 700px){
+    body{
+        display: flex;
+        flex-direction: column;
+    }
+    .background-container{
+        width: 100vw;
+        height: 25vh;
+        background-image: url(images/guitar2.jpg);
+        background-size:cover ;
+        border-bottom: solid rgba(255, 136, 17, 0.2) 1px;
+        border-right: none;
+
+    }
+    main{
+        border-top: solid rgba(253, 253, 253, 0.3) 0.5px;
+        border-left: none;
+        width: 100vw;
+        height: 75vh;
+
+    }
+
+} 
