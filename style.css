@@ -14,23 +14,61 @@ body{
     background-size:cover ;
     width: 35vw;
     height: 100vh;
-    border-right: solid rgba(224, 101, 13, 0.3) 1px;
+    border-right: solid rgba(224, 101, 13, 0.3) 0.5px;
 
 }
 main{
-    border-left: solid rgba(0, 0, 0, 0.6) 1px;
+    border-left: solid rgba(0, 0, 0, 0.6) 0.5px;
     width: 65vw;
     height: 100vh;
-    background: rgb(142,107,33);
-    background: linear-gradient(0deg, rgba(142,107,33,0.8475750577367206) 0%, rgba(73,55,22,0.9214780600461894) 43%, rgba(19,18,18,1) 100%);
+    background:linear-gradient(to right, rgba(0,0,0,0.2) 10%, 
+    rgba(0,0,0,0.3) 10%,
+    rgba(0,0,0,0.8)
+    ),
+    url("images/background.jpeg");
+    background-size: cover ;
+
 }
 
-.background-guitar{
+.banner{
+    width: auto;
+    height:5vw;
+    background-color: rgba(0, 0, 0,0.4);
+    margin-top: 9vw;
+    display: flex;
+    user-select:none;
+}
+h2{
+    font-family: 'Great Vibes', cursive;
+    font-size: 5vw;
+    color: rgba(237, 201, 56, 0.6);
 
+    margin-left: 30px;
+}
+img{
+    width:4vw;
+    margin-left: 2vw;
+    opacity: 0.2;
+    margin-bottom: 5px;
 }
 
 
-@media only screen and (max-width: 700px){
+.header{
+    height:14vw;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 700px){
     body{
         display: flex;
         flex-direction: column;
@@ -38,18 +76,41 @@ main{
     .background-container{
         width: 100vw;
         height: 25vh;
-        background-image: url(images/guitar2.jpg);
-        background-size:cover ;
-        border-bottom: solid rgba(255, 136, 17, 0.2) 1px;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-bottom: solid rgba(95, 57, 1, 0.1) 0.5px;
         border-right: none;
 
     }
     main{
-        border-top: solid rgba(253, 253, 253, 0.3) 0.5px;
+        border-top: solid rgba(105, 50, 5, 0.1) 0.5px;
         border-left: none;
         width: 100vw;
         height: 75vh;
-
+        background:linear-gradient(to top, rgba(0,0,0,0.3) 10%, 
+        rgba(0,0,0,0.3) 10%,
+        rgba(0,0,0,0.7)
+        ),
+        url("images/background.jpeg");
+        background-size: cover;
     }
-
+    .banner{
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        width: 100%;
+        height:9vw;
+        background-color: rgba(0, 0, 0,0.6);
+    }
+    h2{
+        margin-top: 5px;
+        font-size: 7vw;
+        color: rgba(237, 201, 56, 0.894);
+    }
+    img{
+        width:7vw;
+        margin-left: 3vw;
+        opacity: 0.3;
+        margin-bottom: 0;
+    }
 } 
