@@ -12,7 +12,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vollkorn&display=swap" rel="stylesheet">
 </head>
 <body>
     
@@ -32,10 +34,45 @@
             <h3 class="h3-title">Want to learn how to shred like <span class="this-hover">this</span>?<img class="guitar-shred-gif" src="images/guitar-shred.gif" alt="shredding guitar so fast smoke comes out"></h3>
             <h3>Register now and and get lifetime access for only <span class="quote-price">$420.69</span>.</h3>
         </div>
-        <p class="log-in">Already have an account? <a href="">Log in</a></p>
-
+        <p class="log-in">Already have an account? <a href="">Sign In</a></p>
     </div>
-    <form action="">
+
+    <form action="" method="post">
+        <div class="form-container">
+            <div class="field">
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" name="first-name">
+            </div>
+            <div class="field">
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" name="last-name">
+            </div>
+        </div>
+        <div class="form-container">
+            <div class="field">
+                <label for="user-email">Email</label>
+                <input type="email" id="user-email" name="user-email">
+            </div>
+            <div class="field">
+                <label for="user-phone">Phone Number</label>
+                <input type="text" id="user-phone" name="user-phone">
+            </div>
+        </div>
+        <div class="form-container">
+            <div class="field">
+                <label for="user-pass">Password</label>
+                <input type="password" id="user-pass" name="user-pass">
+            </div>
+            <div class="field">
+                <label for="user-pass-confirm">Confirm Password</label>
+                <input type="password" id="user-pass-confirm" name="user-pass-confirm">
+            </div>
+
+        </div>
+        <div class="button-container">
+            <button>Create Account</button>
+        </div>
+
     </form>
 </main>
 
