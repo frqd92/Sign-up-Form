@@ -2,9 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow: hidden;
 }
 body{
     display: flex;
+
 }
 
 .background-container{
@@ -36,12 +38,15 @@ main{
     margin-top: 9vw;
     display: flex;
     user-select:none;
+    overflow:visible;
+
+
 }
 h2{
     font-family: 'Great Vibes', cursive;
     font-size: 5vw;
     color: rgba(237, 201, 56, 0.6);
-
+    overflow:visible;
     margin-left: 30px;
 }
 img{
@@ -59,6 +64,7 @@ img{
     padding-left: calc(0.5vw + 5px);
     padding-top:calc(2vw + 5px) ;
     user-select: none;
+    
 }
 
 .header-top{
@@ -137,7 +143,7 @@ form{
 
 .form-container{
     width: calc(45vw + 70px);
-    height: 5vw;
+    height: calc(7vw + 10px);
     background-color: rgba(0, 0, 0, 0.4);
     display: flex;
     justify-content: space-between;
@@ -150,10 +156,9 @@ form{
 
 }
 
-
 label{
     color: rgb(255, 244, 232);
-    font-size: calc(1.5vw + 4px);
+    font-size: calc(1.2vw + 4px);
     opacity: 0.8;
 }
 .field{
@@ -163,15 +168,23 @@ label{
     align-items: flex-start;
 
 }
-input[type="text"],
-input[type="email"],
-input[type="password"]{
-    width: calc(14vw + 10px);
-    height: calc(1.7vw + 2px);
+input{
+    width: calc(15vw + 10px);
+    height: calc(2.5vw - 2px);
     margin-left: calc(1vw - 1px);
     background: rgba(235, 231, 231, 0.3);
     border-style: none;
+    font-size: calc(2vw - 4px);
+    color: rgb(255, 255, 255);
+    padding: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    
 }
+input:focus{
+    outline:none;
+    border: 2px solid #ff6600;
+}
+
 
 button{
     border: 0.5px solid black;
@@ -190,9 +203,36 @@ button:hover{
 button:active{
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
+.inputs{
+    display: flex;
+    align-items: center;
+}
 
+.check-invalid, .check-valid{
 
+    display: none !important;
+}
 
+.check-invalid-on{
+    color: red;
+    font-size: calc(2vw - 4px);
+    margin-left:0.5vw;
+    display: block;
+}
+
+.check-valid-on{
+    color: green;
+    font-size: calc(2vw - 4px);
+    margin-left:0.5vw;
+    display: block;
+}
+.error-message{
+    font-family:Arial, Helvetica, sans-serif;
+    color:rgb(239, 21, 21);
+    font-size: 14px;
+    opacity:1;
+
+}
 
 
 

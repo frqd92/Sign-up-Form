@@ -15,6 +15,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Vollkorn&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5e0283adb8.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
     
@@ -32,7 +34,7 @@
     <div class="header">
         <div class="header-top">
             <h3 class="h3-title">Want to learn how to shred like <span class="this-hover">this</span>?<img class="guitar-shred-gif" src="images/guitar-shred.gif" alt="shredding guitar so fast smoke comes out"></h3>
-            <h3>Register now and and get lifetime access for only <span class="quote-price">$420.69</span>.</h3>
+            <h3>Register now and and get lifetime access for only <span class="quote-price">$420.69</span>!</h3>
         </div>
         <p class="log-in">Already have an account? <a href="">Sign In</a></p>
     </div>
@@ -40,38 +42,69 @@
     <form action="" method="post">
         <div class="form-container">
             <div class="field">
-                <label for="first-name">First Name</label>
-                <input type="text" id="first-name" name="first-name">
+                <label for="first-name">First Name <span class="error-message"></span></label>
+                <div class="inputs">
+                    <input type="text" id="first-name" name="first-name" class="input-style-name" required>
+                    <i class="fa-solid fa-x check-invalid"></i>
+                    <i class="fa-solid fa-check check-valid"></i>
+                </div>
+
+
             </div>
             <div class="field">
                 <label for="last-name">Last Name</label>
-                <input type="text" id="last-name" name="last-name">
+                <div class="inputs">
+                    <input type="text" id="last-name" name="last-name" class="input-style" required readonly>
+                    <i class="fa-solid fa-x check-invalid"></i>
+                    <i class="fa-solid fa-check check-valid"></i>
+                </div>
+
             </div>
         </div>
         <div class="form-container">
             <div class="field">
                 <label for="user-email">Email</label>
-                <input type="email" id="user-email" name="user-email">
+                <div class="inputs">
+                    <input type="email" id="user-email" name="user-email" class="input-style" required>
+                    <i class="fa-solid fa-x check-invalid"></i>
+                    <i class="fa-solid fa-check check-valid"></i>
+                </div>
+
             </div>
             <div class="field">
                 <label for="user-phone">Phone Number</label>
-                <input type="text" id="user-phone" name="user-phone">
+                <div class="inputs">
+                    <input type="text" id="user-phone" name="user-phone" class="input-style" required>
+                    <i class="fa-solid fa-x check-invalid"></i>
+                    <i class="fa-solid fa-check check-valid"></i>
+                </div>
+
             </div>
         </div>
         <div class="form-container">
             <div class="field">
                 <label for="user-pass">Password</label>
-                <input type="password" id="user-pass" name="user-pass">
+                <div class="inputs">
+                    <input type="password" id="user-pass" name="user-pass" class="input-style" required>
+                    <i class="fa-solid fa-x check-invalid"></i>
+                    <i class="fa-solid fa-check check-valid"></i>
+                </div>
+
             </div>
             <div class="field">
                 <label for="user-pass-confirm">Confirm Password</label>
-                <input type="password" id="user-pass-confirm" name="user-pass-confirm">
+                <div class="input">
+                    <input type="password" id="user-pass-confirm" name="user-pass-confirm" class="input-style" required>
+                    <i class="fa-solid fa-x check-invalid"></i>
+                    <i class="fa-solid fa-check check-valid"></i>
+                </div>
+
             </div>
 
         </div>
-        <div class="button-container">
+     
             <button>Create Account</button>
-        </div>
+      
 
     </form>
 </main>
