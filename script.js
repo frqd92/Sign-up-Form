@@ -1,61 +1,147 @@
 
 
 
-let inputBox = document.querySelector(".input-style-name");
-let errorMessage = document.querySelector(".error-message");
+//let inputBox = document.querySelectorAll(".input-style");
+let errorMessage = document.querySelectorAll(".error-message");
 let checkInvalid = document.querySelector(".check-invalid");
 let checkValid = document.querySelector(".check-valid");
 let validity = false;
 
-window.onload= function checkValidity(){
-    inputBox.addEventListener("focus",textValidity)
-}
 
-function textValidity(e){
-    inputVal = inputBox.value;
-
-    //console.log("focus: " + inputVal)
-    switch(inputVal){
-        case "": 
-        validity = false;
-        break;
-        
-        case /[\d\W]/.test(inputVal) && inputVal:
-        validity = false;
-        break;
-
-        default:
-        validity = true;
-        break;
-    }
-
-    inputString(e);
+    document.addEventListener("focus",(e)=>{
+        let className = e.target.className;
+        let inputBox = document.querySelector("."+ className);
+        if(className.includes("name")){
+            if(className.includes("first")){
+                names(inputBox, 0);
+            }
+            else{
+                names(inputBox, 1);
+            }
+        };
+    },true)
 
 
 
-}
-function inputString (e){
-    document.addEventListener("keydown", inputLogic)
-    function inputLogic(e){
-        errorMessage.textContent=""
-        let key = e.key;
-        inputBox.readOnly=false;
-        let inputVal = inputBox.value;
-        if(inputVal[0]==" "){ //if first character is a space then it will automatically delete it
-            inputVal = inputVal.slice(0,0);
-            inputBox.value = inputVal;
-        }
-        else if(key.match(/[^a-zA-Z\s\-]/)){
-            errorMessage.textContent="(only alphabetic characters)"
+    function names (inputBox, index){
+  
+        inputBox.addEventListener("keydown", inputLogic);
+        function inputLogic(e){
+            errorMessage[index].textContent=""
+            let key = e.key;
+            inputBox.readOnly=false;
+            let inputVal = inputBox.value;
+
+            if(inputVal==" "){ //if first character is a space then it will automatically delete it
+                inputVal = inputVal.slice(0,0);
+                inputBox.value = inputVal;
+            }
+            else if(key.match(/[^a-zA-Z\s\-]/)){
+            errorMessage[index].textContent="(only alphabetic characters)"
             inputBox.readOnly=true;
+            setTimeout(()=>{
+                errorMessage[index].textContent=""
+            },2000)
+            }
+            console.log(inputVal);
+
         }
+    
     }
-}
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+// window.onload= function checkValidity(){    //this is where you left off. It's sending both 0 and 1 because window loads both. You need to set an if statement that only passes that parameter if that specific input is focussed
+//     inputBox[0].addEventListener("focus",inputString(0))
+//     inputBox[1].addEventListener("focus",inputString(1))
+
+// }
+
+
+// function inputString (){
+
+//     document.addEventListener("keydown", inputLogic)
+//     function inputLogic(e){
+    
+//         errorMessage[index].textContent=""
+//         let key = e.key;
+//         inputBox[index].readOnly=false;
+//         let inputVal = inputBox[index].value;
+//         if(inputVal[index]==" "){ //if first character is a space then it will automatically delete it
+//             inputVal = inputVal.slice(0,0);
+//             inputBox[index].value = inputVal;
+//         }
+//         else if(key.match(/[^a-zA-Z\s\-]/)){
+
+//             errorMessage[index].textContent="(only alphabetic characters)"
+//             inputBox[index].readOnly=true;
+//         }
+//     }
+
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function textValidity(e){
+
+//     //inputVal = inputBox[index].value;
+
+//     // switch(inputVal){
+//     //     case "": 
+//     //     validity = false;
+//     //     break;
+        
+//     //     case /[\d\W]/.test(inputVal) && inputVal:
+//     //     validity = false;
+//     //     break;
+
+//     //     default:
+//     //     validity = true;
+//     //     break;
+//     // }
+
+//     inputString(e);
+
+// }
 
 // function addRedCheck(){
 //     let inputVal = inputBox.value;

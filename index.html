@@ -44,7 +44,7 @@
             <div class="field">
                 <label for="first-name">First Name <span class="error-message"></span></label>
                 <div class="inputs">
-                    <input type="text" id="first-name" name="first-name" class="input-style-name" required>
+                    <input type="text" id="first-name" name="first-name" class="first-name" required onpaste="return false;">
                     <i class="fa-solid fa-x check-invalid"></i>
                     <i class="fa-solid fa-check check-valid"></i>
                 </div>
@@ -52,9 +52,9 @@
 
             </div>
             <div class="field">
-                <label for="last-name">Last Name</label>
+                <label for="last-name">Last Name <span class="error-message"></span></label>
                 <div class="inputs">
-                    <input type="text" id="last-name" name="last-name" class="input-style" required readonly>
+                    <input type="text" id="last-name" name="last-name" class="last-name" required onpaste="return false;">
                     <i class="fa-solid fa-x check-invalid"></i>
                     <i class="fa-solid fa-check check-valid"></i>
                 </div>

@@ -160,6 +160,7 @@ label{
     color: rgb(255, 244, 232);
     font-size: calc(1.2vw + 4px);
     opacity: 0.8;
+    position: relative;
 }
 .field{
     display: flex;
@@ -228,6 +229,7 @@ button:active{
 }
 .error-message{
     font-family:Arial, Helvetica, sans-serif;
+    position: fixed;
     color:rgb(239, 21, 21);
     font-size: 14px;
     opacity:1;
