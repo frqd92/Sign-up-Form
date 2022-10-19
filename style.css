@@ -136,7 +136,7 @@ form{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 75vh;
+    height: calc(75vh - 3px);
     font-family: 'Vollkorn', serif;
 
 }
@@ -148,12 +148,11 @@ form{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: calc(3.5vw - 1px);
+    padding: calc(2.5vw + 30px);
     border-radius: 3px;
-    margin-bottom: calc(1vw + 10px);
+    margin-bottom: calc(1.2vw + 10px);
     box-shadow: rgba(59, 58, 58, 0.25) 0px 54px 55px, rgba(119, 119, 119, 0.12) 0px -12px 30px, rgba(57, 56, 56, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-
-
+    
 }
 
 label{
@@ -179,6 +178,7 @@ input{
     color: rgb(255, 255, 255);
     padding: 5px;
     font-family: 'Courier New', Courier, monospace;
+    caret-color: rgb(18, 17, 17);
     
 }
 input:focus{
@@ -190,12 +190,12 @@ input:focus{
 button{
     border: 0.5px solid black;
     border-radius: 3px;
-    width: 150px;
-    height: 40px;
+    width: calc(10vw + 15px);
+    height: calc(2vw + 20px);
     background-color: rgba(223, 133, 15, 0.3);
-    color: rgba(255, 255, 255,0.9);
+    color: rgba(227, 201, 201, 0.9);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    font-size: 1rem;
+    font-size: calc(1vw + 2px);
 }
 
 button:hover{
@@ -231,12 +231,13 @@ button:active{
     font-family:Arial, Helvetica, sans-serif;
     position: fixed;
     color:rgb(239, 21, 21);
-    font-size: 14px;
+    font-size: calc(0.8vw + 3px);
     opacity:1;
+    margin-left: 2px;
 
 }
 
-
+/* Media Stuff */
 
 
 @media (max-width: 920px){
@@ -308,3 +309,30 @@ button:active{
 
 
 } 
+
+
+@media (max-width:1300px) {
+    .form-container{
+         margin-bottom: calc(3.5vw + 7px);
+         margin-top: calc(2vw);
+         padding: calc(3vw + 30px);
+    }
+    .inputs :nth-child(1){
+        color:red;
+    }
+}
+@media (max-width:1000px){
+    form{
+        margin-top: calc(5vw + 10px);
+    }
+}
+
+@media (min-width: 2000px){
+    form{
+        height: calc(70vh);
+    }
+    .form-container{
+        width: calc(55vw + 50px);
+        margin-bottom: calc(0.3vw + 10px);
+    }
+}
