@@ -87,6 +87,32 @@ img{
     color:rgb(227, 206, 177);
     animation: neonlight 1s ease-in-out infinite alternate;
 }
+@keyframes neonlight {
+    100% {
+        text-shadow:
+          0 0 10px rgb(240, 122, 12),
+          0 0 4px rgb(7, 5, 5),
+          0 0 3px rgb(250, 246, 3),
+          0 0 2px var(--shadow-color),
+          0 0 3px var(--shadow-color),
+          0 0 2px var(--shadow-color),
+          0 0 1px var(--shadow-color),
+          0 0 4px var(--shadow-color);
+      }
+     0% {
+
+        text-shadow:
+          0 0 4px rgb(210, 194, 17),
+          0 0 10px rgb(186, 197, 29),
+          0 0 8px #fff,
+          0 0 0px var(--shadow-color),
+          0 0 0px var(--shadow-color),
+          0 0 0px var(--shadow-color),
+          0 0 0px var(--shadow-color),
+          0 0 0px var(--shadow-color);
+      }
+}
+
 
 .log-in{
     font-size: calc(1.5vw - 2px);
@@ -102,16 +128,7 @@ img{
   
 }
 
-@keyframes neonlight {
-    
-    from{
-        text-shadow: 0 0 10px var(--shadow-color), 0 0 20px var(--shadow-color), 0 0 30px var(--shadow-color), 0 0 40px var(--shadow-color),0 0 50px var(--shadow-color);
-      }
-      to {
-        text-shadow: 0 0 40px var(--shadow-color), 0 0 50px var(--shadow-color);
-      }
-    
-}
+
 
 .this-hover{
     color: rgb(110, 153, 151);
@@ -164,9 +181,8 @@ label{
 .field{
     display: flex;
     flex-direction: column;
-
     align-items: flex-start;
-
+    width: 21rem;
 }
 input{
     width: calc(15vw + 10px);
@@ -205,28 +221,27 @@ button:active{
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 .inputs{
+    position: relative;
     display: flex;
     align-items: center;
+    width: 100%;
+
 }
 
 .check-invalid, .check-valid{
-
-    display: none !important;
+    font-size: calc(2vw - 4px);
+    margin-left:0.5vw;
+    display: block;
+   
 }
 
-.check-invalid-on{
+.check-invalid{
     color: red;
-    font-size: calc(2vw - 4px);
-    margin-left:0.5vw;
-    display: block;
+}
+.check-valid{
+    color: rgb(74, 206, 44);
 }
 
-.check-valid-on{
-    color: green;
-    font-size: calc(2vw - 4px);
-    margin-left:0.5vw;
-    display: block;
-}
 .error-message{
     font-family:Arial, Helvetica, sans-serif;
     position: fixed;
@@ -238,7 +253,6 @@ button:active{
 }
 
 /* Media Stuff */
-
 
 @media (max-width: 920px){
     body{
@@ -317,13 +331,10 @@ button:active{
          margin-top: calc(2vw);
          padding: calc(3vw + 30px);
     }
-    .inputs :nth-child(1){
-        color:red;
-    }
 }
 @media (max-width:1000px){
     form{
-        margin-top: calc(5vw + 10px);
+        margin-top: calc(3vw + 10px);
     }
 }
 
