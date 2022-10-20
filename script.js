@@ -70,7 +70,7 @@ function passwordChecker(inputBox, index){//checks password validity as user is 
          }
          inputBox.addEventListener("input",()=>{ //checks if passwords match as user types from Password field
             passwordStorage=inputBox.value;
-            if(inputBox.value === confirmInput.value && inputBox.value.length>1){
+            if(inputBox.value === confirmInput.value && (confirmInput.value!=="" && inputBox.value !=="")){
                 li[5].classList.add("li-valid");
             }
             else{
@@ -113,8 +113,10 @@ function passwordHover(inputBox){ //hover on this and reveal pass
     let passHover = document.getElementById("pass-reveal");
     passHover.addEventListener("mouseover", ()=>{
         inputBox.type="text";
+        confirmInput.type="text";
         passHover.addEventListener("mouseleave",()=>{
             inputBox.type="password";
+            confirmInput.type="password";
         })
     })
 }
