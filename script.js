@@ -2,13 +2,9 @@
 let errorMessage = document.querySelectorAll(".error-message");
 let passBox = document.querySelector(".pass-box");
 
-
-
 document.addEventListener("focus",(e)=>{
     let idName = e.target.id;
     let inputBox = document.getElementById(idName);
-
-
     if(idName.includes("name")){
         if(idName.includes("first")){
             validations(inputBox, 0);
@@ -19,7 +15,6 @@ document.addEventListener("focus",(e)=>{
     };
     if(idName.includes("email")){
         validations(inputBox, 2);
-        marketing();
     }
     if(idName.includes("phone")){
         validations(inputBox,3);
@@ -27,25 +22,37 @@ document.addEventListener("focus",(e)=>{
             errorMessage[3].textContent="Min Length: 8"
         }
     }
-    if(idName.includes("user-pass")){
+    if(idName.includes("user-pass")){ //adds password box when password inputs are focussed
         passBox.style.display="block";
     }
-}, true)
+    else{ //removes password box when focussing outside of password inputs
+        passBox.style.display="none";
+    }
+},true)
+
+
 
 
 function validations (inputBox, index){
     inputCheck(inputBox, index);
-    passBox.style.display="none";
+  
+    inputBox.addEventListener("change", ()=>{ //if last character is whitespace when focus changes it will automatically delete it.
+        let inputVal = inputBox.value;
+        if(inputVal[inputVal.length-1]===" "){
+            inputBox.value=inputVal.trim();
+        }
+    })
     inputBox.addEventListener("keydown", e=>{
         errorMessage[index].textContent=""
         let key = e.key;
         inputBox.readOnly=false;
-
         let inputVal = inputBox.value;
-        if(inputVal==" "){ //if first character is a space then it will automatically delete it
+        if(inputVal[0]==" "){ //if first character is a space then it will automatically delete it
             inputVal = inputVal.slice(0,0);
             inputBox.value = inputVal;
+
         }
+        inputBox.addEventListener
         if(index<2){ //if first or last names are selected
             if(key.match(/[^a-zA-Z\s\-]/)){
                 errorMessage[index].textContent="(only alphabetic characters)"
@@ -65,42 +72,39 @@ function validations (inputBox, index){
                 },1300);
             }
         }
-     
     });
 }
 
-// (key.match(/[^\b\d\s\-\(\)\+]/))
 
-function inputCheck(inputBox, index){
+function inputCheck(inputBox, index){ //red and green check icons
     let iconContainer = document.querySelectorAll(".icon-container");
-    inputBox.addEventListener("input", ()=>{
-        if(inputBox.checkValidity()===true){
-            iconContainer[index].innerHTML="";
-            let icon = document.createElement("i");
-            icon.classList.add("fa-solid", "fa-check", "check-valid");
-            if(iconContainer[index].children.length<2){
-                iconContainer[index].appendChild(icon);
-            };
+    inputBox.addEventListener("input", checker, true);
+        function checker(){
+            if(inputBox.checkValidity()===true){
+                iconContainer[index].innerHTML="";
+                let icon = document.createElement("i");
+                icon.classList.add("fa-solid", "fa-check", "check-valid");
+                if(iconContainer[index].children.length<2){
+                    iconContainer[index].appendChild(icon);
+                };
+            }
+            else if(inputBox.checkValidity()===false){
+                iconContainer[index].innerHTML="";
+                let icon = document.createElement("i");
+                icon.classList.add("fa-solid", "fa-x", "check-invalid");
+                if(iconContainer[index].children.length<2){
+                    iconContainer[index].appendChild(icon);
+                };
+            }
         }
-        else{
-            iconContainer[index].innerHTML="";
-            let icon = document.createElement("i");
-            icon.classList.add("fa-solid", "fa-x", "check-invalid");
-            if(iconContainer[index].children.length<2){
-                iconContainer[index].appendChild(icon);
-            };
-        }
-    });
 }
-function marketing(){
-    setTimeout(()=>{
-        errorMessage[2].textContent="I will sell your data to third parties"
-    },2300)
-    setTimeout(()=>{
-        errorMessage[2].textContent="";
-    },3000);
 
-}
+document.addEventListener("mousedown", (e)=>{ //removes password box when clicking outside of password inputs
+    if(e.target.id!=="user-pass" || e.target.id!=="user-pass-confirm"){
+        passBox.style.display="none";
+    }
+});
+
 
 let thisHover = document.querySelector(".this-hover");
 let guitarShredGif = document.querySelector(".guitar-shred-gif");

@@ -44,14 +44,14 @@
             <div class="field">
                 <label for="first-name">First Name <span class="error-message"></span></label>
                 <div class="inputs">
-                    <input type="text" id="first-name" name="first-name" class="first-name" required onpaste="return false;">
+                    <input type="text" id="first-name" name="first-name" class="first-name" pattern="^[^\s][a-zA-Z\s-]+$" required onpaste="return false;">
                     <div class="icon-container"></div>
                 </div>
             </div>
             <div class="field">
                 <label for="last-name">Last Name <span class="error-message"></span></label>
                 <div class="inputs">
-                    <input type="text" id="last-name" name="last-name" class="last-name" required onpaste="return false;">
+                    <input type="text" id="last-name" name="last-name" class="last-name" pattern="^[^\s][a-zA-Z\s-]+$" required onpaste="return false;">
                     <div class="icon-container"></div>
                 </div>
 
@@ -61,7 +61,7 @@
             <div class="field">
                 <label for="user-email">Email <span class="error-message"></span></label>
                 <div class="inputs">
-                    <input type="email" id="user-email" name="user-email" class="user-email" required placeholder="example@email.com">
+                    <input type="email" id="user-email" name="user-email" class="user-email" required placeholder="example@email.com" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$">
                     <div class="icon-container"></div>
                 </div>
 
@@ -83,7 +83,9 @@
                     <li>Uppercase characters</li>
                     <li>Lowercase characters</li>
                     <li>Special characters</li>
-                    <li>Confirm password</li>
+                    <li>Doesn't contain part of your name</li>
+                    <li>Confirm password match</li>
+                    <li class = "pass-hover">Hover to reveal passwords</li>
                 </ul>
             </div>
             <div class="field">
