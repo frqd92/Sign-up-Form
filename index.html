@@ -69,7 +69,7 @@
             <div class="field">
                 <label for="user-phone">Phone Number <span class="error-message"></span></label>
                 <div class="inputs">
-                    <input type="text" id="user-phone" name="user-phone" class="user-phone" minlength="8" required>
+                    <input type="text" id="user-phone" name="user-phone" class="user-phone" minlength="8" maxlength="12" required>
                     <div class="icon-container"></div>
                 </div>
 
@@ -77,21 +77,21 @@
         </div>
         <div class="form-container">
             <div class="pass-box">
-                <h3>PASSWORD REQUIREMENTS</h4>
+                <h3>Password Requirements</h4>
                 <ul>
-                    <li>At least 7 characters</li>
-                    <li>Uppercase characters</li>
-                    <li>Lowercase characters</li>
-                    <li>Special characters</li>
-                    <li>Doesn't contain part of your name</li>
-                    <li>Confirm password match</li>
-                    <li class = "pass-hover">Hover to reveal passwords</li>
+                    <li class="list">At least 7 characters</li>
+                    <li class="list">Uppercase characters</li>
+                    <li class="list">Lowercase characters</li>
+                    <li class="list">Special characters</li>
+                    <li class="list">Numbers</li>
+                    <li class="list">Matching passwords</li>
+                    <li class="list" id="pass-reveal">Hover to reveal passwords </li>
                 </ul>
             </div>
             <div class="field">
                 <label for="user-pass">Password</label>
                 <div class="inputs">
-                    <input type="password" id="user-pass" name="user-pass" class="input-style" required>
+                    <input type="password" id="user-pass" name="user-pass" class="input-style" required >
                     <div class="icon-container"></div>
                 </div>
 

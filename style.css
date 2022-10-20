@@ -174,32 +174,69 @@ form{
 
 }
 .pass-box{
-    width: calc(21vw + 13px);
-    height:calc(20vw + 10px);
-    background: rgba(90, 28, 9, 0.694);
+    width: calc(24vw + 17px);
+    height:calc(21.3vw + 10px);
+    background: rgba(0, 0, 0, 0.7);
     position: absolute;
-    left: -18vw;
+    left: calc(-22vw + 2px);
     border-radius: 4px;
-    border: none;
     padding: calc(0.5vw + 2px);
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: rgb(164, 154, 154);
+    font-family: 'Special Elite', cursive;
+    color: rgb(240, 209, 179);
     display: none;
+    text-shadow: 1px 1px 1px rgb(49, 48, 48), 
+    0px 0px 2px rgb(229, 122, 9); 
+    letter-spacing: 0.1vw;
+    user-select: none;
+}
+li{
+    border: 0.01vw solid rgb(133, 125, 125);
+    border-bottom: none;
+    padding-left:10px;
+    text-align: center;
+}
+.list{
+    background: rgba(0, 0, 0, 0.65);
+}
+.li-valid{
+    background-color: rgba(21, 146, 56, 0.51);
+}
+li:nth-child(6){
+    border-bottom: 0.01vw solid rgb(133, 125, 125);
+    margin-bottom: 1vw;
+}
+li:last-child{
+    width: 100%;
+    height: 1.7vw;
+    border: none;
+    font-size: calc(0.63vw + 3px);
+    background: none;
+    margin: 0 auto;
+    line-height: 1vw;
+    color: rgba(254, 255, 254, 0.71);
+    text-shadow: none;
+}
+li:last-child:hover{
+    font-size: calc(0.7vw + 3px);
+    color: #ff6600;
 }
 
 .pass-box > h3{
-    font-size: calc(1.3vw + 3px);
-    margin-bottom: calc(0.3vw + 1px);
-    color: #a7a74a;
+    font-size: calc(2.3vw + 3px);
+    margin-bottom: calc(0.1vw + 1px);
+    opacity: 0.8;
+    font-weight: bolder;
+    font-family: 'Great Vibes', cursive;
+    color: rgba(237, 201, 56, 0.8);
+    text-align: center;
+    text-shadow: none;
 }
 ul{
     line-height: calc(2.3vw + 2px);
-    font-size: calc(1.2vw + 3px);
+    font-size: calc(0.82vw + 3px);
     list-style:none;
 }
-.pass-hover{
-    text-align: center;
-}
+
 label{
     color: rgb(255, 244, 232);
     font-size: calc(1.2vw + 4px);
@@ -223,7 +260,7 @@ input{
     padding: 5px;
     font-family: 'Courier New', Courier, monospace;
     caret-color: rgb(18, 17, 17);
-    
+
 }
 input:focus{
     outline:none;
