@@ -156,8 +156,6 @@ form{
     height: 20%;
     max-height: 10%;
     min-height: 20%;
-    /* width: calc(52vw + 80px);
-    height: calc(11vw + 10px); */
     background-color: rgba(0, 0, 0, 0.4);
     display: flex;
     justify-content: space-between;
@@ -167,6 +165,18 @@ form{
     margin-bottom: 4rem;
     box-shadow: rgba(59, 58, 58, 0.25) 0px 54px 55px, rgba(119, 119, 119, 0.12) 0px -12px 30px, rgba(57, 56, 56, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     position: relative;
+}
+.credits{
+    position: absolute;
+    bottom: 0;
+    color: rgb(236, 218, 181, 0.8);
+    background-color: #fc610239;
+    font-size: calc(1vw + 1px);
+}
+
+.credits > a{
+    color: #93b0db;
+    text-decoration: none;
 }
 .field{
     display: flex;
@@ -381,6 +391,15 @@ input:focus::placeholder {
         background-repeat: no-repeat;
         border-bottom: solid rgba(95, 57, 1, 0.1) 0.5px;
         border-right: none;
+    }
+    .credits{
+        position: absolute;
+        display: inline-block;
+        font-size: calc(8px + 0.8vw);
+        bottom: 98%;
+        background: none;
+        right:0;
+        margin-bottom: calc(10px - 2vw);
     }
     main{
         border-top: solid rgba(224, 117, 30, 0.7) 0.5px;
