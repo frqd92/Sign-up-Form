@@ -1,10 +1,3 @@
-
-//bug: if both passwords match but you  highlight input box and delete it doesn't update validity background to not green
-let errorMessage = document.querySelectorAll(".error-message");
-let passBox = document.querySelector(".pass-box");
-let passwordStorage ="";
-let confirmInput = document.getElementById("user-pass-confirm");
-
 document.addEventListener("focus",(e)=>{
     let idName = e.target.id;
     let inputBox = document.getElementById(idName);
@@ -41,7 +34,6 @@ document.addEventListener("focus",(e)=>{
     else{ //removes password box when focussing outside of password inputs
         passBox.style.display="none";
     }
-
 },true)
 
 
@@ -62,7 +54,6 @@ function validations (inputBox, index){ //to check validity as user types
             inputVal = inputVal.slice(0,0);
             inputBox.value = inputVal;
         }
-       
         if(index<2){ //if first or last names are selected
             if(key.match(/[^a-zA-Z\s\-]/)){
                 errorMessage[index].textContent="(only alphabetic characters)"
@@ -239,4 +230,8 @@ thisHover.addEventListener("mouseover", ()=>{
 })
 
 
+let passBox = document.querySelector(".pass-box");
+let passwordStorage ="";
+let confirmInput = document.getElementById("user-pass-confirm");
+let errorMessage = document.querySelectorAll(".error-message");
 
