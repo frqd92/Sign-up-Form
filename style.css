@@ -549,7 +549,7 @@ input:focus::placeholder {
 @media (min-width:1300px) {
 
     form{
-       margin-top: -1vw;
+       margin-top:0vw;
     }
 
     .form-container{
@@ -562,7 +562,8 @@ input:focus::placeholder {
 
 @media (min-width: 1800px){
     form{
-        margin-top: -1vw;
+        margin-top: 0vw;
+
     }
     .form-container{
         width: calc(60vw + 50px);
